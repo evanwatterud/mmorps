@@ -6,9 +6,10 @@ use Rack::Session::Cookie, {
 
 get '/' do
   if session[:visit_count].nil?
-    session[:visit_count] = 1
+    session[:player] = Player.new
+    session[:computer] = Computer.new
   else
     session[:visit_count] += 1
   end
-  erb :index
+  erb :home
 end
