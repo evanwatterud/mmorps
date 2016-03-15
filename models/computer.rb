@@ -1,13 +1,14 @@
 class Computer
   attr_reader :choice
-  attr_accessor :score
+  attr_accessor :score, :win
 
   def initialize
     @choice = nil
     @score = 0
+    @win = false
   end
 
   def choose
-    @choice = ["rock", "paper", "scissors"].sample
+    @choice = ["Rock", "Paper", "Scissors"].sample
   end
 end

@@ -12,7 +12,7 @@ describe Computer do
   describe "#choose" do
     it "should choose rock, paper, or scissors for the computer" do
       computer.choose
-      expect(["rock", "paper", "scissors"]).to include(computer.choice)
+      expect(["Rock", "Paper", "Scissors"]).to include(computer.choice)
     end
   end
 
@@ -24,6 +24,17 @@ describe Computer do
     it "has a writer for score" do
       computer.score += 1
       expect(computer.score).to eq(1)
+    end
+  end
+
+  describe "#win" do
+    it "has a reader for win" do
+      expect(computer.win).to be(false)
+    end
+
+    it "has a writer for win" do
+      computer.win = true
+      expect(computer.win).to be(true)
     end
   end
 end
